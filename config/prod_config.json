@@ -1,0 +1,10 @@
+{
+    "DB_USERNAME": "root",
+    "DB_PASSWORD": "P@ssw0rd",
+    "DB_PORT": "3306",
+    "DB_HOST": "127.0.0.1",
+    "DB_NAME": "bwastartup",
+    "MID_SERVER_KEY": "SB-Mid-server-ArCdNclv4Q-1eTNtrQJBC_nN",
+    "MID_CLIENT_KEY": "SB-Mid-client-YGWX2L8auSgoiyiT",
+    "SECRET_KEY": "BWASTARTUP_s3cr3T_k3Y"
+}

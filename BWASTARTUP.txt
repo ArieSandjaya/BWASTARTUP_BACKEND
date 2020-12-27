@@ -1,0 +1,94 @@
+- Users
+* id : int
+* name : varchar
+* occupation : varchar
+* email : varchar
+* password_hash : varchar
+* avatar_file_name : varchar
+* role : varchar
+* token : varchar
+* created_at : datetime
+* updated_at : datetime
+
+- Campaigns
+* id : int
+* user_id : int
+* name : varchar 
+* short_description : varchar
+* description : text
+* goal_amount : int
+* current_amount : int
+* perks : text
+* backer_count : int
+* slug : varchar
+* created_at : datetime
+* updated_at : datetime
+
+- Campaign Images
+* id : int
+* campaign_id : id
+* file_name : varchar
+* is_primary : bool
+* created_at : datetime
+* updated_at : datetime
+
+- Transactions
+* id : int
+* campaign_id : int
+* user_id : int
+* amount : int
+* status : varchar
+* code : varchar
+* created_at : datetime
+* updated_at : datetime
+
+
+
+CREATE TABLE `bwastartup`.`users` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `occupation` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password_hash` VARCHAR(255) NOT NULL,
+  `avatar_file_name` VARCHAR(255) NOT NULL,
+  `role` VARCHAR(255) NOT NULL,
+  `token` VARCHAR(255) NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `bwastartup`.`campaigns` (
+  `id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `short_description` VARCHAR(255) NULL,
+  `goal_amount` INT NOT NULL DEFAULT 0,
+  `current_amount` INT NOT NULL DEFAULT 0,
+  `perks` TEXT NULL,
+  `backer_count` INT NULL,
+  `slug` VARCHAR(255) NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `bwastartup`.`campaign_images` (
+  `id` INT NOT NULL,
+  `campaign_id` INT NOT NULL,
+  `file_name` VARCHAR(255) NOT NULL,
+  `is_primary` TINYINT NOT NULL DEFAULT 0,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `bwastartup`.`transactions` (
+  `id` INT NOT NULL,
+  `campaign_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `amount` INT NOT NULL,
+  `status` VARCHAR(255) NOT NULL,
+  `code` VARCHAR(255) NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`));
